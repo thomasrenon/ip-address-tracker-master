@@ -15,9 +15,11 @@ a {
 }
 
 body {
+  background-image: url("../images/bg.png");
   background-size: 100% auto;
   font-family: "Rubik", sans-serif;
   font-size: 62.5%;
+  opacity: 0.8;
 }
 
 header {
@@ -64,11 +66,9 @@ header button {
 
 section {
   background-color: #fff;
-  position: absolute;
-  z-index: 9999;
   border-radius: 16px;
-  margin-left: 11.5%;
-  margin-right: 11.5%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: -79px;
   width: 77%;
   height: 160px;
@@ -99,28 +99,6 @@ section article h2 {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 15px;
-}
-
-section article div {
-  font-size: 1.5rem;
-  color: #000;
-  font-weight: 700;
-  line-height: 29px;
-}
-
-#mapid {
-  height: 500px;
-}
-
-#mapid .leaflet-left {
-  right: 10px;
-  left: inherit;
-}
-
-#mapid .leaflet-top {
-  bottom: 20px;
-  top: inherit;
 }
 
 footer {
