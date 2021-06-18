@@ -65,20 +65,6 @@
 
     <script type="text/javascript" src="leaflet.js"></script>
   
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-        var ip = "8.8.8.8";
-        var api_key = "at_CMIxNAovBWfFwYKw8r5OX48Lwii0D";
-        $(function () {
-           $.ajax({
-               url: "https://geo.ipify.org/api/v1",
-               data: {apiKey: api_key, ipAddress: ip},
-               success: function(data) {
-                   $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
-               }
-           });
-        });
-    </script>
     
     <footer>
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
