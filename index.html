@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | IP Address Tracker</title>
+
+    <Link rel="stylesheet" type="text/css" href="styles/Style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+
+  </head>
+  <body>
+
+    <header>
+      <h1 class="title">IP Address Tracker</h1>
+      <input type="search" placeholder="Search for any IP address or domain">
+      <button>
+        <img src="images/icon-arrow.svg">
+      </button>
+    </header>
+    
+    <section>
+      <article>
+        <h2>IP Adress</h2>
+        <div>
+          192.212.174.101
+        </div>
+      </article>
+
+      <article>
+        <h2>Location</h2>
+        <div>
+          Brooklyn, NY<br/>
+          10001
+        </div>
+      </article>
+
+      <article>
+        <h2>Timezone</h2>
+        <div>
+          UTC -05:00
+        </div>
+      </article>
+
+      <article>
+        <h2>ISP</h2>
+        <div>
+          SpaceX<br/>
+          Starlink
+        </div>
+      </article>
+    </section>
+
+    <!-- Leaflet -->
+    <div id="mapid"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+    <script type="text/javascript" src="leaflet.js"></script>
   
-  <title>Frontend Mentor | IP Address Tracker</title>
-
-  <Link rel="stylesheet" type="text/css" href="styles/Style.css">
-
-</head>
-<body>
-
-  <header>
-    <h1 class="title">IP Address Tracker</h1>
-    <input type="search" placeholder="Search for any IP address or domain">
-    <button>
-      <img src="images/icon-arrow.svg">
-    </button>
-  </header>
-  
-  <section>
-    <article>
-      <h2>IP Adress</h2>
-      <div></div>
-    </article>
-
-    <article>
-      <h2>Location</h2>
-      <div></div>
-    </article>
-
-    <article>
-      <h2>Timezone</h2>
-      <div></div>
-    </article>
-
-    <article>
-      <h2>ISP</h2>
-      <div></div>
-    </article>
-  </section>
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        var ip = "8.8.8.8";
+        var api_key = "at_CMIxNAovBWfFwYKw8r5OX48Lwii0D";
+        $(function () {
+           $.ajax({
+               url: "https://geo.ipify.org/api/v1",
+               data: {apiKey: api_key, ipAddress: ip},
+               success: function(data) {
+                   $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
+               }
+           });
+        });
+    </script>
+    
     <footer>
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by Thomas Renon.
     </footer>
+
   </body>
 
 </html>
